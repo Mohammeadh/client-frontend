@@ -7,10 +7,10 @@ import '../app/globals.css';
 
 const SocketContext = createContext();
 
-const socket = io('https://video-chat-mohammed.vercel.app/', {
-  transports: ['websocket', 'polling'],
-  upgrade: false,
+const socket = io('https://video-chat-mohammed.vercel.app', {
+  transports: ['polling'], // Use polling as fallback
 });
+
 
 const ContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);
