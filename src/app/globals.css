@@ -1,21 +1,203 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* globals.css */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.navbar {
+  background-color: #1e1e1e;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #333;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00aaff;
+}
+
+.navbar-links a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-links a:hover {
+  color: #00aaff;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  /* //flex-grow: 1; */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.video-call-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.video-call-container.with-call {
+  justify-content: flex-start;
+}
+
+.video-card {
+  background: #1e1e1e;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.sidebar {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+
+input {
+  background-color: #333;
+  color: #ffffff;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #00aaff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0077cc;
+}
+
+button.hangup {
+  background-color: #ff3333;
+}
+
+button.hangup:hover {
+  background-color: #cc0000;
+}
+
+.notification {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #444;
+  border-radius: 5px;
+}
+.mic-button {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+.control-button.muted {
+  background-color: #ff3333; /* Red color when muted */
+}
+
+.control-button.disabled {
+  background-color: #cccccc; /* Grey color when disabled */
+}
+
+.control-button:hover {
+  background-color: #0077cc;
+}
+
+
+.mic-button:hover {
+  background-color: #0077cc;
+}
+
+.mic-button.muted {
+  background-color: #ff3333;
+}
+
+.mic-button.muted:hover {
+  background-color: #cc0000;
+}
+.control-button {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.control-button:hover {
+  background-color: #0077cc;
+}
+
+.control-button.muted, .control-button.disabled {
+  background-color: #ff3333;
+}
+
+.control-button.muted:hover, .control-button.disabled:hover {
+  background-color: #cc0000;
+}
+
+@media (max-width: 480px) {
+  .content
+  {
+    flex-direction: column;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .content
+  {
+    flex-direction: column;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
