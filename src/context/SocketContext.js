@@ -7,8 +7,8 @@ import '../app/globals.css';
 
 const SocketContext = createContext();
 
-const socket = io('https://video-chat-mohammed.vercel.app', {
-  transports: ['websocket'], // Use both polling and websocket
+const socket = io('https://video-chat-9w0m.onrender.com', {
+  transports: ['websocket','polling'], // Use both polling and websocket
   withCredentials: true,
 });
 
